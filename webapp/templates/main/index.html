@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block body %}
+
+  <div class="jumbotron">
+    <h1>Demo Attack Site</h1>
+    <p>Click a button to run an exploit against the target workload ({{victim_host}})</p>
+  </div>
+  <div>
+    <div class="row">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Attack Description</th><th>Execute Attack</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td>Ping Google (8.8.8.8)</td><td> <a href="/ping" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+            <tr style="display:none;">
+		          <td>Ping target workload ({{victim_host}})</td><td> <a href="/ping_target" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+            <tr>
+                          <td>Curl ({{victim_host}}) index webpage</td><td> <a href="/cmd_exe" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+            <tr>
+		          <td>Access /cmd.exe on ({{victim_host}})</td><td> <a href="/cmd_exe" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+            <tr>
+              <td>Exploit Apache Struts Vuln and list users</td><td> <a href="/struts_list_users" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+            <tr>
+              <td>Exploit Apache Struts Vuln and connect to malicious URL</td><td> <a href="/struts_mal_url" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+            <tr>
+              <td>Exploit Apache Struts Vuln and create a user</td><td> <a href="/struts_create_user" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+            <tr>
+              <td>Exploit Apache Struts Vuln and download eicar</td><td> <a href="/struts_eicar" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+            <tr>
+              <td>Exploit Apache Struts Vuln and download eicar (https)</td><td> <a href="/struts_eicar_https" class="btn btn-primary btn-md">Execute</a> </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}
