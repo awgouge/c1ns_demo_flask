@@ -66,7 +66,8 @@ def ping_target():
 def curl_target():
     #output = "fake output"
     try:
-        output = subprocess.check_output(["curl", victim_host])
+        target_url = "{victim_host}:{struts_port}/cmd.exe".format(victim_host=victim_host, struts_port=struts_port)
+        output = subprocess.check_output(["curl", "-m", "2", target_url])
         flash("The command ran successfully", category="success")
     except subprocess.CalledProcessError as e:
         flash("An error occurred", category="danger")
