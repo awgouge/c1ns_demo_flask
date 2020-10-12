@@ -12,7 +12,7 @@ fi
 
 export VICTIM=$1
 export STRUTS_PORT=$2
-pip3 install -r requirements.txt
+su ubuntu -c "pip3 install -r requirements.txt"
 export FLASK_APP=app.py
 
 echo $VICTIM > VICTIM_HOST.txt
