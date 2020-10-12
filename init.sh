@@ -18,15 +18,15 @@ export FLASK_APP=app.py
 echo $VICTIM > VICTIM_HOST.txt
 echo $STRUTS_PORT > STRUTS_PORT.txt
 
-cat <<EOT
+cat << EOT > /lib/systemd/system/flask_web.service
 [Unit]
 Description=Demo Attack Site
 After=network.target
 
 [Service]
 User=ubuntu
-WorkingDirectory=/home/ubuntu/cnp_demo_flask
-ExecStart=/usr/bin/python3 /home/ubuntu/cnp_demo_flask/app.py
+WorkingDirectory=/home/ubuntu/c1ns_demo_flask
+ExecStart=/usr/bin/python3 /home/ubuntu/c1ns_demo_flask/app.py
 Restart=always
 
 [Install]
